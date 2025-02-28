@@ -1,4 +1,4 @@
-package com.CSIR.TMD.Dto;
+package com.CSIR.TMD.DTO;
 
 import lombok.*;
 
@@ -6,17 +6,17 @@ import lombok.*;
 @Getter
 @Data
 public class SectionOneDTO {
-    private Long id;
+//    private Long id;
     private String technologyRefNo;
     private String keywordTechnology;
 
-    public Long getId() {
-        return id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
     public String getTechnologyRefNo() {
         return technologyRefNo;
@@ -157,8 +157,8 @@ public class SectionOneDTO {
     public SectionOneDTO() {
     }
 
-    public SectionOneDTO(Long id, String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, Boolean multiLabInstitute, String leadLaboratory, String associateInstitute, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
-        this.id = id;
+    public SectionOneDTO(String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, Boolean multiLabInstitute, String leadLaboratory, String associateInstitute, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
+//        this.id = id;
         this.technologyRefNo = technologyRefNo;
         this.keywordTechnology = keywordTechnology;
         this.nameTechnology = nameTechnology;

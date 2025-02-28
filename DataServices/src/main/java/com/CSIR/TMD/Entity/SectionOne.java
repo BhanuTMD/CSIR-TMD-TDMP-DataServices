@@ -11,15 +11,15 @@ import lombok.*;
 @Table(name = "section_one") // Replace with your actual table name
 public class SectionOne {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
 
     public SectionOne() {
     }
 
-    public SectionOne(Long id, String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, Boolean multiLabInstitute, String leadLaboratory, String associateInstitute, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
-        this.id = id;
+    public SectionOne(String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, Boolean multiLabInstitute, String leadLaboratory, String associateInstitute, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
+//        this.id = id;
         this.technologyRefNo = technologyRefNo;
         this.keywordTechnology = keywordTechnology;
         this.nameTechnology = nameTechnology;
@@ -39,6 +39,7 @@ public class SectionOne {
         this.laboratoryDetail = laboratoryDetail;
     }
 
+    @Id
     @Column(name = "technology_ref_no") // Ensure this matches your database schema
     private String technologyRefNo;
 
@@ -57,9 +58,9 @@ public class SectionOne {
     @Column(name = "lead_laboratory")
     private String leadLaboratory;
 
-    public Long getId() {
-        return id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
 
     public String getTechnologyRefNo() {
         return technologyRefNo;
@@ -162,9 +163,9 @@ public class SectionOne {
     @Column(name = "laboratory_detail")
     private String laboratoryDetail;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
     public void setTechnologyRefNo(String technologyRefNo) {
         this.technologyRefNo = technologyRefNo;

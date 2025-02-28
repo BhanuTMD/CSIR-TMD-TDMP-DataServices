@@ -1,7 +1,7 @@
 package com.CSIR.TMD.Mapper;
 
 
-import com.CSIR.TMD.Dto.SectionOneDTO;
+import com.CSIR.TMD.DTO.SectionOneDTO;
 import com.CSIR.TMD.Entity.SectionOne;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +14,7 @@ public class SectionOneMapper {
             return null;
         }
         return new SectionOneDTO(
-                sectionOne.getId(),
+//                sectionOne.getId(),
                 sectionOne.getTechnologyRefNo(),
                 sectionOne.getKeywordTechnology(),
                 sectionOne.getNameTechnology(),
@@ -41,7 +41,7 @@ public class SectionOneMapper {
             return null;
         }
         SectionOne sectionOne = new SectionOne();
-        sectionOne.setId(sectionOneDTO.getId());
+//        sectionOne.setId(sectionOneDTO.getId());
         sectionOne.setTechnologyRefNo(sectionOneDTO.getTechnologyRefNo());
         sectionOne.setKeywordTechnology(sectionOneDTO.getKeywordTechnology());
         sectionOne.setNameTechnology(sectionOneDTO.getNameTechnology());

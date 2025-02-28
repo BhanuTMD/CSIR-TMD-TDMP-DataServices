@@ -1,6 +1,6 @@
 package com.CSIR.TMD.Service.Impl;
 
-import com.CSIR.TMD.Dto.SectionOneDTO;
+import com.CSIR.TMD.DTO.SectionOneDTO;
 import com.CSIR.TMD.Entity.SectionOne;
 import com.CSIR.TMD.Exception.ResponseNotFoundException;
 import com.CSIR.TMD.Mapper.SectionOneMapper;
@@ -9,8 +9,6 @@ import com.CSIR.TMD.Service.SectionOneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,9 +26,9 @@ public class SectionOneServiceImpl implements SectionOneService {
         return sectionOneDTOList;
     }
 
-    public SectionOneDTO getSectionById(Long id) {
-        SectionOne sectionOne = sectionOneRepository.findById(id).orElseThrow(() ->
-                new ResponseNotFoundException("technology Not Found" + id));
+    public SectionOneDTO getSectionById(String technologyRefNo) {
+        SectionOne sectionOne = sectionOneRepository.findById(technologyRefNo).orElseThrow(() ->
+                new ResponseNotFoundException("technology Not Found" + technologyRefNo));
         return SectionOneMapper.toSectionOneDTO(sectionOne);
     }
 
