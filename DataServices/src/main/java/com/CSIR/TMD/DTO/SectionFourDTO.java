@@ -12,6 +12,10 @@ public class SectionFourDTO {
     private String city;
     private String country;
 
+
+    private String nodalContactPerson;
+    private String deploymentDetails;
+
     public SectionFourDTO() {
     }
 
@@ -81,6 +85,4 @@ public class SectionFourDTO {
         this.deploymentDetails = deploymentDetails;
     }
 
-    private String nodalContactPerson;
-    private String deploymentDetails;
 }

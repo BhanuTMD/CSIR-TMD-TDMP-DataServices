@@ -8,7 +8,12 @@ import com.CSIR.TMD.Repository.SectionOneRepository;
 import com.CSIR.TMD.Service.SectionOneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,6 +42,25 @@ public class SectionOneServiceImpl implements SectionOneService {
         SectionOne sectionOne = SectionOneMapper.toSectionOne(sectionOneDTO);
         SectionOne savedEmployee =sectionOneRepository.save(sectionOne);
         return SectionOneMapper.toSectionOneDTO(savedEmployee);
+    }
+
+
+    public String saveUploadedFile(MultipartFile file) {
+        // Define the directory to save the file
+        String directory = "uploads/"; // Ensure this directory exists
+        String filePath = directory + file.getOriginalFilename();
+
+        try {
+            // Save the file to the specified location
+            Path path = Paths.get(filePath);
+            Files.createDirectories(path.getParent()); // Create directories if they don't exist
+            file.transferTo(path.toFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception (e.g., return an error response)
+        }
+
+        return filePath; // Return the file path or URL
     }
 }
 

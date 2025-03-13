@@ -21,7 +21,7 @@ public class SectionThree {
     private String licenseName;
 
     @Column(name = "date_of_agreement_signing")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy") // Specify the date format
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date dateOfAgreementSigning;
 
@@ -29,18 +29,18 @@ public class SectionThree {
     private String typeOfLicense;
 
     @Column(name = "regional_geography", length = 100)
-    private String regionalGeography;
+    private String staRegionalGeography;
 
     @Column(name = "details_of_exclusivity", length = 300)
     private String detailsOfExclusivity;
 
     @Column(name = "date_of_license")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy") // Specify the date format
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date dateOfLicense;
 
     @Column(name = "license_valid_until")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy") // Specify the date format
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date licenseValidUntil;
 
@@ -52,14 +52,14 @@ public class SectionThree {
     private List<Royalty> royalty;
 
     @Column(name = "subtotal_royalty")
-    private Double subtotalRoyalty;
+    private Double subTotalRoyalty;
 
     @ElementCollection
     @CollectionTable(name = "premia", joinColumns = @JoinColumn(name = "technologyRefNo"))
     private List<Premia> premia;
 
     @Column(name = "subtotal_premia")
-    private Double subtotalPremia;
+    private Double subTotalPremia;
 
     @Column(name = "grand_total")
     private Double grandTotal;
@@ -67,20 +67,20 @@ public class SectionThree {
     public SectionThree() {
     }
 
-    public SectionThree(String technologyRefNo, String licenseName, Date dateOfAgreementSigning, String typeOfLicense, String regionalGeography, String detailsOfExclusivity, Date dateOfLicense, Date licenseValidUntil, String paymentTerms, List<Royalty> royalty, Double subtotalRoyalty, List<Premia> premia, Double subtotalPremia, Double grandTotal) {
+    public SectionThree(String technologyRefNo, String licenseName, Date dateOfAgreementSigning, String typeOfLicense, String staRegionalGeography, String detailsOfExclusivity, Date dateOfLicense, Date licenseValidUntil, String paymentTerms, List<Royalty> royalty, Double subTotalRoyalty, List<Premia> premia, Double subTotalPremia, Double grandTotal) {
         this.technologyRefNo = technologyRefNo;
         this.licenseName = licenseName;
         this.dateOfAgreementSigning = dateOfAgreementSigning;
         this.typeOfLicense = typeOfLicense;
-        this.regionalGeography = regionalGeography;
+        this.staRegionalGeography = staRegionalGeography;
         this.detailsOfExclusivity = detailsOfExclusivity;
         this.dateOfLicense = dateOfLicense;
         this.licenseValidUntil = licenseValidUntil;
         this.paymentTerms = paymentTerms;
         this.royalty = royalty;
-        this.subtotalRoyalty = subtotalRoyalty;
+        this.subTotalRoyalty = subTotalRoyalty;
         this.premia = premia;
-        this.subtotalPremia = subtotalPremia;
+        this.subTotalPremia = subTotalPremia;
         this.grandTotal = grandTotal;
     }
 
@@ -116,12 +116,12 @@ public class SectionThree {
         this.typeOfLicense = typeOfLicense;
     }
 
-    public String getRegionalGeography() {
-        return regionalGeography;
+    public String getstaRegionalGeography() {
+        return staRegionalGeography;
     }
 
-    public void setRegionalGeography(String regionalGeography) {
-        this.regionalGeography = regionalGeography;
+    public void setstaRegionalGeography(String staRegionalGeography) {
+        this.staRegionalGeography = staRegionalGeography;
     }
 
     public String getDetailsOfExclusivity() {
@@ -164,12 +164,12 @@ public class SectionThree {
         this.royalty = royalty;
     }
 
-    public Double getSubtotalRoyalty() {
-        return subtotalRoyalty;
+    public Double getSubTotalRoyalty() {
+        return subTotalRoyalty;
     }
 
-    public void setSubtotalRoyalty(Double subtotalRoyalty) {
-        this.subtotalRoyalty = subtotalRoyalty;
+    public void setSubTotalRoyalty(Double subTotalRoyalty) {
+        this.subTotalRoyalty = subTotalRoyalty;
     }
 
     public List<Premia> getPremia() {
@@ -180,12 +180,12 @@ public class SectionThree {
         this.premia = premia;
     }
 
-    public Double getSubtotalPremia() {
-        return subtotalPremia;
+    public Double getSubTotalPremia() {
+        return subTotalPremia;
     }
 
-    public void setSubtotalPremia(Double subtotalPremia) {
-        this.subtotalPremia = subtotalPremia;
+    public void setSubTotalPremia(Double subTotalPremia) {
+        this.subTotalPremia = subTotalPremia;
     }
 
     public Double getGrandTotal() {

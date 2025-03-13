@@ -12,7 +12,7 @@ public class Premia {
 
     private Double amount;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy") // Specify the date format
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd") // Specify the date format
     @Temporal(TemporalType.DATE)
     private Date date;
 

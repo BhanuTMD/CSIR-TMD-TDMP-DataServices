@@ -4,18 +4,27 @@ import com.CSIR.TMD.DTO.SectionFourDTO;
 import com.CSIR.TMD.DTO.SectionOneDTO;
 import com.CSIR.TMD.DTO.SectionThreeDTO;
 import com.CSIR.TMD.DTO.SectionTwoDTO;
+//import com.CSIR.TMD.Model.SearchRequestDTO;
+//import com.CSIR.TMD.Service.Impl.SearchService;
+import com.CSIR.TMD.Model.CompositeResponse;
+import com.CSIR.TMD.Model.SearchRequest;
+import com.CSIR.TMD.Service.Impl.SectionService;
 import com.CSIR.TMD.Service.SectionFourService;
 import com.CSIR.TMD.Service.SectionOneService;
 import com.CSIR.TMD.Service.SectionTwoService;
 import com.CSIR.TMD.Service.SectionThreeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/apf/tdmp") // Base URL for this controller
 public class TDMPController {
@@ -103,6 +112,7 @@ public class TDMPController {
     // Create a new section
     @PostMapping("/saveSectionOne")
     public ResponseEntity<SectionOneDTO> saveSectionOne(@RequestBody SectionOneDTO sectionOneDTO) {
+
         SectionOneDTO savedSection = sectionOneService.saveSection(sectionOneDTO);
         return new ResponseEntity<>(savedSection, HttpStatus.CREATED);
     }
@@ -115,6 +125,7 @@ public class TDMPController {
 
     @PostMapping("/saveSectionThree")
     public ResponseEntity<SectionThreeDTO> saveSectionThree(@RequestBody SectionThreeDTO sectionThreeDTO) {
+
         SectionThreeDTO savedSection = sectionThreeService.saveSection(sectionThreeDTO);
         return new ResponseEntity<>(savedSection, HttpStatus.CREATED);
     }
@@ -125,5 +136,13 @@ public class TDMPController {
         return new ResponseEntity<>(savedSection, HttpStatus.CREATED);
     }
 
+
+    @Autowired
+    private SectionService sectionService;
+
+    @PostMapping("/search")
+    public CompositeResponse searchSections(@RequestBody SearchRequest searchRequest) {
+        return sectionService.searchSections(searchRequest);
+    }
 
 }

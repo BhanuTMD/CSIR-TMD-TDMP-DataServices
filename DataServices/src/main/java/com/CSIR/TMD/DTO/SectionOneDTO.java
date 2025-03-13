@@ -2,13 +2,30 @@ package com.CSIR.TMD.DTO;
 
 import lombok.*;
 
-@Setter
-@Getter
+
 @Data
 public class SectionOneDTO {
 //    private Long id;
     private String technologyRefNo;
     private String keywordTechnology;
+    private String nameTechnology;
+    private String industrialSector;
+    private String multiLabInstitute;
+    private String leadLaboratory;
+    private String associateInstitute;
+    private String theme;
+    private Integer technologyLevel;
+    private String scaleDevelopment;
+    private Integer yearDevelopment;
+    private String briefTech;
+    private String competitivePosition;
+    private String technoEconomics;
+    private String marketPotential;
+    private String environmentalStatutory;
+    private String picture;
+    private String laboratoryDetail;
+
+
 
 //    public Long getId() {
 //        return id;
@@ -17,6 +34,30 @@ public class SectionOneDTO {
 //    public void setId(Long id) {
 //        this.id = id;
 //    }
+
+    public SectionOneDTO() {
+    }
+
+    public SectionOneDTO(String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, String multiLabInstitute, String leadLaboratory, String associateInstitute, String theme, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
+        this.technologyRefNo = technologyRefNo;
+        this.keywordTechnology = keywordTechnology;
+        this.nameTechnology = nameTechnology;
+        this.industrialSector = industrialSector;
+        this.multiLabInstitute = multiLabInstitute;
+        this.leadLaboratory = leadLaboratory;
+        this.associateInstitute = associateInstitute;
+        this.theme = theme;
+        this.technologyLevel = technologyLevel;
+        this.scaleDevelopment = scaleDevelopment;
+        this.yearDevelopment = yearDevelopment;
+        this.briefTech = briefTech;
+        this.competitivePosition = competitivePosition;
+        this.technoEconomics = technoEconomics;
+        this.marketPotential = marketPotential;
+        this.environmentalStatutory = environmentalStatutory;
+        this.picture = picture;
+        this.laboratoryDetail = laboratoryDetail;
+    }
 
     public String getTechnologyRefNo() {
         return technologyRefNo;
@@ -50,11 +91,11 @@ public class SectionOneDTO {
         this.industrialSector = industrialSector;
     }
 
-    public Boolean getMultiLabInstitute() {
+    public String getMultiLabInstitute() {
         return multiLabInstitute;
     }
 
-    public void setMultiLabInstitute(Boolean multiLabInstitute) {
+    public void setMultiLabInstitute(String multiLabInstitute) {
         this.multiLabInstitute = multiLabInstitute;
     }
 
@@ -72,6 +113,14 @@ public class SectionOneDTO {
 
     public void setAssociateInstitute(String associateInstitute) {
         this.associateInstitute = associateInstitute;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
     }
 
     public Integer getTechnologyLevel() {
@@ -154,44 +203,7 @@ public class SectionOneDTO {
         this.laboratoryDetail = laboratoryDetail;
     }
 
-    public SectionOneDTO() {
-    }
 
-    public SectionOneDTO(String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, Boolean multiLabInstitute, String leadLaboratory, String associateInstitute, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
-//        this.id = id;
-        this.technologyRefNo = technologyRefNo;
-        this.keywordTechnology = keywordTechnology;
-        this.nameTechnology = nameTechnology;
-        this.industrialSector = industrialSector;
-        this.multiLabInstitute = multiLabInstitute;
-        this.leadLaboratory = leadLaboratory;
-        this.associateInstitute = associateInstitute;
-        this.technologyLevel = technologyLevel;
-        this.scaleDevelopment = scaleDevelopment;
-        this.yearDevelopment = yearDevelopment;
-        this.briefTech = briefTech;
-        this.competitivePosition = competitivePosition;
-        this.technoEconomics = technoEconomics;
-        this.marketPotential = marketPotential;
-        this.environmentalStatutory = environmentalStatutory;
-        this.picture = picture;
-        this.laboratoryDetail = laboratoryDetail;
-    }
 
-    private String nameTechnology;
-    private String industrialSector;
-    private Boolean multiLabInstitute;
 
-    private String leadLaboratory;
-    private String associateInstitute;
-    private Integer technologyLevel;
-    private String scaleDevelopment;
-    private Integer yearDevelopment;
-    private String briefTech;
-    private String competitivePosition;
-    private String technoEconomics;
-    private String marketPotential;
-    private String environmentalStatutory;
-    private String picture;
-    private String laboratoryDetail;
 }

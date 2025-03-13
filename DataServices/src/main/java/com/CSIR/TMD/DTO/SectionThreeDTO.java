@@ -1,6 +1,7 @@
 package com.CSIR.TMD.DTO;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.util.Date;
@@ -10,33 +11,41 @@ import java.util.List;
 public class SectionThreeDTO {
     private String technologyRefNo;
     private String licenseName;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dateOfAgreementSigning;
+
     private String typeOfLicense;
-    private String regionalGeography;
+    private String staRegionalGeography;
     private String detailsOfExclusivity;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dateOfLicense;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date licenseValidUntil;
+
     private String paymentTerms;
     private List<RoyaltyDTO> royalty;
-    private Double subtotalRoyalty;
+    private Double subTotalRoyalty;
     private List<PremiaDTO> premia;
-    private Double subtotalPremia;
+    private Double subTotalPremia;
     private Double grandTotal;
 
-    public SectionThreeDTO(String technologyRefNo, String licenseName, Date dateOfAgreementSigning, String typeOfLicense, String regionalGeography, String detailsOfExclusivity, Date dateOfLicense, Date licenseValidUntil, String paymentTerms, List<RoyaltyDTO> royalty, Double subtotalRoyalty, List<PremiaDTO> premia, Double subtotalPremia, Double grandTotal) {
+    public SectionThreeDTO(String technologyRefNo, String licenseName, Date dateOfAgreementSigning, String typeOfLicense, String staRegionalGeography, String detailsOfExclusivity, Date dateOfLicense, Date licenseValidUntil, String paymentTerms, List<RoyaltyDTO> royalty, Double subTotalRoyalty, List<PremiaDTO> premia, Double subTotalPremia, Double grandTotal) {
         this.technologyRefNo = technologyRefNo;
         this.licenseName = licenseName;
         this.dateOfAgreementSigning = dateOfAgreementSigning;
         this.typeOfLicense = typeOfLicense;
-        this.regionalGeography = regionalGeography;
+        this.staRegionalGeography = staRegionalGeography;
         this.detailsOfExclusivity = detailsOfExclusivity;
         this.dateOfLicense = dateOfLicense;
         this.licenseValidUntil = licenseValidUntil;
         this.paymentTerms = paymentTerms;
         this.royalty = royalty;
-        this.subtotalRoyalty = subtotalRoyalty;
+        this.subTotalRoyalty = subTotalRoyalty;
         this.premia = premia;
-        this.subtotalPremia = subtotalPremia;
+        this.subTotalPremia = subTotalPremia;
         this.grandTotal = grandTotal;
     }
 
@@ -75,12 +84,12 @@ public class SectionThreeDTO {
         this.typeOfLicense = typeOfLicense;
     }
 
-    public String getRegionalGeography() {
-        return regionalGeography;
+    public String getstaRegionalGeography() {
+        return staRegionalGeography;
     }
 
-    public void setRegionalGeography(String regionalGeography) {
-        this.regionalGeography = regionalGeography;
+    public void setstaRegionalGeography(String staRegionalGeography) {
+        this.staRegionalGeography = staRegionalGeography;
     }
 
     public String getDetailsOfExclusivity() {
@@ -123,12 +132,12 @@ public class SectionThreeDTO {
         this.royalty = royalty;
     }
 
-    public Double getSubtotalRoyalty() {
-        return subtotalRoyalty;
+    public Double getSubTotalRoyalty() {
+        return subTotalRoyalty;
     }
 
-    public void setSubtotalRoyalty(Double subtotalRoyalty) {
-        this.subtotalRoyalty = subtotalRoyalty;
+    public void setSubTotalRoyalty(Double subTotalRoyalty) {
+        this.subTotalRoyalty = subTotalRoyalty;
     }
 
     public List<PremiaDTO> getPremia() {
@@ -139,12 +148,12 @@ public class SectionThreeDTO {
         this.premia = premia;
     }
 
-    public Double getSubtotalPremia() {
-        return subtotalPremia;
+    public Double getSubTotalPremia() {
+        return subTotalPremia;
     }
 
-    public void setSubtotalPremia(Double subtotalPremia) {
-        this.subtotalPremia = subtotalPremia;
+    public void setSubTotalPremia(Double subTotalPremia) {
+        this.subTotalPremia = subTotalPremia;
     }
 
     public Double getGrandTotal() {

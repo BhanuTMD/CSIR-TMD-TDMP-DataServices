@@ -19,15 +19,6 @@ public class SectionFour {
     @Column(name = "client_address", length = 300, nullable = false)
     private String clientAddress;
 
-    public SectionFour(String technologyRefNo, String clientName, String clientAddress, String city, String country, String nodalContactPerson, String deploymentDetails) {
-        this.technologyRefNo = technologyRefNo;
-        this.clientName = clientName;
-        this.clientAddress = clientAddress;
-        this.city = city;
-        this.country = country;
-        this.nodalContactPerson = nodalContactPerson;
-        this.deploymentDetails = deploymentDetails;
-    }
 
     @Column(name = "city", length = 300, nullable = false)
     private String city;
@@ -40,6 +31,18 @@ public class SectionFour {
 
     @Column(name = "deployment_details", length = 300)
     private String deploymentDetails;
+
+    public SectionFour(String technologyRefNo, String clientName, String clientAddress, String city, String country, String nodalContactPerson, String deploymentDetails) {
+        this.technologyRefNo = technologyRefNo;
+        this.clientName = clientName;
+        this.clientAddress = clientAddress;
+        this.city = city;
+        this.country = country;
+        this.nodalContactPerson = nodalContactPerson;
+        this.deploymentDetails = deploymentDetails;
+    }
+
+
 
     public SectionFour() {
     }

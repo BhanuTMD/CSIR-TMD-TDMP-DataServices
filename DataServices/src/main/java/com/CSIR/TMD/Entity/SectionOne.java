@@ -8,36 +8,14 @@ import lombok.*;
 @Entity
 @Data
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "section_one") // Replace with your actual table name
 public class SectionOne {
 
 
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Long id;
-
-    public SectionOne() {
-    }
-
-    public SectionOne(String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, Boolean multiLabInstitute, String leadLaboratory, String associateInstitute, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
-//        this.id = id;
-        this.technologyRefNo = technologyRefNo;
-        this.keywordTechnology = keywordTechnology;
-        this.nameTechnology = nameTechnology;
-        this.industrialSector = industrialSector;
-        this.multiLabInstitute = multiLabInstitute;
-        this.leadLaboratory = leadLaboratory;
-        this.associateInstitute = associateInstitute;
-        this.technologyLevel = technologyLevel;
-        this.scaleDevelopment = scaleDevelopment;
-        this.yearDevelopment = yearDevelopment;
-        this.briefTech = briefTech;
-        this.competitivePosition = competitivePosition;
-        this.technoEconomics = technoEconomics;
-        this.marketPotential = marketPotential;
-        this.environmentalStatutory = environmentalStatutory;
-        this.picture = picture;
-        this.laboratoryDetail = laboratoryDetail;
-    }
 
     @Id
     @Column(name = "technology_ref_no") // Ensure this matches your database schema
@@ -53,11 +31,21 @@ public class SectionOne {
     private String industrialSector;
 
     @Column(name = "multi_lab_institute")
-    private Boolean multiLabInstitute;
+    private String multiLabInstitute;
 
     @Column(name = "lead_laboratory")
     private String leadLaboratory;
 
+    @Column(name = "theme")
+    private String theme;
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
 //    public Long getId() {
 //        return id;
 //    }
@@ -78,7 +66,7 @@ public class SectionOne {
         return industrialSector;
     }
 
-    public Boolean getMultiLabInstitute() {
+    public String getMultiLabInstitute() {
         return multiLabInstitute;
     }
 
@@ -183,7 +171,7 @@ public class SectionOne {
         this.industrialSector = industrialSector;
     }
 
-    public void setMultiLabInstitute(Boolean multiLabInstitute) {
+    public void setMultiLabInstitute(String multiLabInstitute) {
         this.multiLabInstitute = multiLabInstitute;
     }
 

@@ -21,6 +21,7 @@ public class SectionOneMapper {
                 sectionOne.getIndustrialSector(),
                 sectionOne.getMultiLabInstitute(),
                 sectionOne.getLeadLaboratory(),
+                sectionOne.getTheme(),
                 sectionOne.getAssociateInstitute(),
                 sectionOne.getTechnologyLevel(),
                 sectionOne.getScaleDevelopment(),
@@ -50,6 +51,7 @@ public class SectionOneMapper {
         sectionOne.setLeadLaboratory(sectionOneDTO.getLeadLaboratory());
         sectionOne.setAssociateInstitute(sectionOneDTO.getAssociateInstitute());
         sectionOne.setTechnologyLevel(sectionOneDTO.getTechnologyLevel());
+        sectionOne.setTheme(sectionOneDTO.getTheme());
         sectionOne.setScaleDevelopment(sectionOneDTO.getScaleDevelopment());
         sectionOne.setYearDevelopment(sectionOneDTO.getYearDevelopment());
         sectionOne.setBriefTech(sectionOneDTO.getBriefTech());
