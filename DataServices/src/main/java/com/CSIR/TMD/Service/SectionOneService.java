@@ -9,5 +9,6 @@ public interface SectionOneService {
     List<SectionOneDTO> getAllSections();
     SectionOneDTO getSectionById(String technologyRefNo);
     SectionOneDTO saveSection(SectionOneDTO sectionOneDTO);
+//    List<String> getAllTechnologyRefNo();
 
 }

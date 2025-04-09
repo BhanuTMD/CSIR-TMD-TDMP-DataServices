@@ -37,13 +37,31 @@ public class SectionOneServiceImpl implements SectionOneService {
         return SectionOneMapper.toSectionOneDTO(sectionOne);
     }
 
-    public SectionOneDTO saveSection(SectionOneDTO sectionOneDTO) {
-        
-        SectionOne sectionOne = SectionOneMapper.toSectionOne(sectionOneDTO);
-        SectionOne savedEmployee =sectionOneRepository.save(sectionOne);
-        return SectionOneMapper.toSectionOneDTO(savedEmployee);
-    }
+//    public SectionOneDTO saveSection(SectionOneDTO sectionOneDTO) {
+//
+//        SectionOne sectionOne = SectionOneMapper.toSectionOne(sectionOneDTO);
+//        SectionOne savedEmployee =sectionOneRepository.save(sectionOne);
+//        return SectionOneMapper.toSectionOneDTO(savedEmployee);
+//    }
 
+//    @Override
+//    public List<String> getAllTechnologyRefNo() {
+//        return sectionOneRepository.getAllTechnologyRefNo();
+//    }
+
+
+    public SectionOneDTO saveSection(SectionOneDTO sectionOneDTO) {
+        SectionOne sectionOne = SectionOneMapper.toSectionOne(sectionOneDTO);
+
+        // Handle file upload
+//        if (sectionOneDTO.getPicture() != null && !sectionOneDTO.getPicture().isEmpty()) {
+//            String filePath = saveUploadedFile(sectionOneDTO.getPicture());
+//            sectionOne.setPicture(filePath); // Set the file path in the entity
+//        }
+
+        SectionOne savedSectionOne = sectionOneRepository.save(sectionOne);
+        return SectionOneMapper.toSectionOneDTO(savedSectionOne);
+    }
 
     public String saveUploadedFile(MultipartFile file) {
         // Define the directory to save the file
@@ -62,5 +80,7 @@ public class SectionOneServiceImpl implements SectionOneService {
 
         return filePath; // Return the file path or URL
     }
+
+
 }
 

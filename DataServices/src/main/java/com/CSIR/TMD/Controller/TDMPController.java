@@ -79,6 +79,8 @@ public class TDMPController {
         }
     }
 
+
+
     @GetMapping("/sectionTwo/{technologyRefNo}")
     public ResponseEntity<SectionTwoDTO> getSectionTwoById(@PathVariable String technologyRefNo) {
         SectionTwoDTO section = sectionTwoService.getSectionById(technologyRefNo);

@@ -19,8 +19,8 @@ public class SectionTwoDTO {
     private String iprType;
     private String registrationNo;
     private String status;
-    private Date statusDate;
-    private List<String> country;
+        private Date statusDate;
+        private List<String> country;
 
     // Default constructor
     public SectionTwoDTO() {

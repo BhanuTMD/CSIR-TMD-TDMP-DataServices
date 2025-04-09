@@ -1,6 +1,9 @@
 package com.CSIR.TMD.DTO;
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 
 @Data
@@ -9,16 +12,17 @@ public class SectionOneDTO {
     private String technologyRefNo;
     private String keywordTechnology;
     private String nameTechnology;
-    private String industrialSector;
+    private List<String> industrialSector;
     private String multiLabInstitute;
     private String leadLaboratory;
-    private String associateInstitute;
-    private String theme;
+    private List<String> associateInstitute;
+    private List<String> theme;
     private Integer technologyLevel;
     private String scaleDevelopment;
     private Integer yearDevelopment;
     private String briefTech;
     private String competitivePosition;
+    private List<String> stakeHolders;
     private String technoEconomics;
     private String marketPotential;
     private String environmentalStatutory;
@@ -38,26 +42,6 @@ public class SectionOneDTO {
     public SectionOneDTO() {
     }
 
-    public SectionOneDTO(String technologyRefNo, String keywordTechnology, String nameTechnology, String industrialSector, String multiLabInstitute, String leadLaboratory, String associateInstitute, String theme, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
-        this.technologyRefNo = technologyRefNo;
-        this.keywordTechnology = keywordTechnology;
-        this.nameTechnology = nameTechnology;
-        this.industrialSector = industrialSector;
-        this.multiLabInstitute = multiLabInstitute;
-        this.leadLaboratory = leadLaboratory;
-        this.associateInstitute = associateInstitute;
-        this.theme = theme;
-        this.technologyLevel = technologyLevel;
-        this.scaleDevelopment = scaleDevelopment;
-        this.yearDevelopment = yearDevelopment;
-        this.briefTech = briefTech;
-        this.competitivePosition = competitivePosition;
-        this.technoEconomics = technoEconomics;
-        this.marketPotential = marketPotential;
-        this.environmentalStatutory = environmentalStatutory;
-        this.picture = picture;
-        this.laboratoryDetail = laboratoryDetail;
-    }
 
     public String getTechnologyRefNo() {
         return technologyRefNo;
@@ -83,12 +67,51 @@ public class SectionOneDTO {
         this.nameTechnology = nameTechnology;
     }
 
-    public String getIndustrialSector() {
+
+    public List<String> getIndustrialSector() {
         return industrialSector;
     }
 
-    public void setIndustrialSector(String industrialSector) {
+    public SectionOneDTO(String technologyRefNo, String keywordTechnology, String nameTechnology, List<String> industrialSector, String multiLabInstitute, String leadLaboratory, List<String> associateInstitute, List<String> theme, Integer technologyLevel, String scaleDevelopment, Integer yearDevelopment, String briefTech, String competitivePosition, List<String> stakeHolders, String technoEconomics, String marketPotential, String environmentalStatutory, String picture, String laboratoryDetail) {
+        this.technologyRefNo = technologyRefNo;
+        this.keywordTechnology = keywordTechnology;
+        this.nameTechnology = nameTechnology;
         this.industrialSector = industrialSector;
+        this.multiLabInstitute = multiLabInstitute;
+        this.leadLaboratory = leadLaboratory;
+        this.associateInstitute = associateInstitute;
+        this.theme = theme;
+        this.technologyLevel = technologyLevel;
+        this.scaleDevelopment = scaleDevelopment;
+        this.yearDevelopment = yearDevelopment;
+        this.briefTech = briefTech;
+        this.competitivePosition = competitivePosition;
+        this.stakeHolders = stakeHolders;
+        this.technoEconomics = technoEconomics;
+        this.marketPotential = marketPotential;
+        this.environmentalStatutory = environmentalStatutory;
+        this.picture = picture;
+        this.laboratoryDetail = laboratoryDetail;
+    }
+
+    public void setIndustrialSector(List<String> industrialSector) {
+        this.industrialSector = industrialSector;
+    }
+
+    public List<String> getTheme() {
+        return theme;
+    }
+
+    public void setTheme(List<String> theme) {
+        this.theme = theme;
+    }
+
+    public List<String> getStakeHolders() {
+        return stakeHolders;
+    }
+
+    public void setStakeHolders(List<String> stakeHolders) {
+        this.stakeHolders = stakeHolders;
     }
 
     public String getMultiLabInstitute() {
@@ -107,21 +130,16 @@ public class SectionOneDTO {
         this.leadLaboratory = leadLaboratory;
     }
 
-    public String getAssociateInstitute() {
+
+
+    public List<String> getAssociateInstitute() {
         return associateInstitute;
     }
 
-    public void setAssociateInstitute(String associateInstitute) {
+    public void setAssociateInstitute(List<String> associateInstitute) {
         this.associateInstitute = associateInstitute;
     }
 
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
 
     public Integer getTechnologyLevel() {
         return technologyLevel;
@@ -202,8 +220,6 @@ public class SectionOneDTO {
     public void setLaboratoryDetail(String laboratoryDetail) {
         this.laboratoryDetail = laboratoryDetail;
     }
-
-
 
 
 }
