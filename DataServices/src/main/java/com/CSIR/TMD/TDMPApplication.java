@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApfApplication {
+public class  TDMPApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApfApplication.class, args);
+		SpringApplication.run(TDMPApplication.class, args);
 	}
 
 }
