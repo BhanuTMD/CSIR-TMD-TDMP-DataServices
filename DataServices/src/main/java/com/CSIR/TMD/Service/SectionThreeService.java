@@ -1,5 +1,6 @@
 package com.CSIR.TMD.Service;
 
+import com.CSIR.TMD.DTO.SectionOneDTO;
 import com.CSIR.TMD.DTO.SectionThreeDTO;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface SectionThreeService {
     List<SectionThreeDTO> getAllSections();
 
     void deleteSectionThree(String technologyRefNo);
+
+    SectionThreeDTO getByTechnologyRefNo(String technologyRefNo);
 }

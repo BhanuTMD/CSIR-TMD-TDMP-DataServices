@@ -10,5 +10,5 @@ public interface SectionTwoService {
     List<SectionTwoDTO> getAllSections();
     SectionTwoDTO getSectionById(String technologyRefNo);
     SectionTwoDTO saveSection(SectionTwoDTO sectionTwoDTO);
-
+    SectionTwoDTO getByTechnologyRefNo(String technologyRefNo);
 }
