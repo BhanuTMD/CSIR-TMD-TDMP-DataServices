@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface SectionTwoRepository extends JpaRepository<SectionTwo, String>, JpaSpecificationExecutor<SectionTwo> {
-    Optional<Object> findByTechnologyRefNo(String technologyRefNo);
+    Optional<SectionTwo> findByTechnologyRefNo(String technologyRefNo);
+
     // You can define custom query methods here if needed
 }

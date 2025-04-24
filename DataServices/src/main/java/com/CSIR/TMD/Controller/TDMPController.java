@@ -1,9 +1,6 @@
 package com.CSIR.TMD.Controller;
 
-import com.CSIR.TMD.DTO.SectionFourDTO;
-import com.CSIR.TMD.DTO.SectionOneDTO;
-import com.CSIR.TMD.DTO.SectionThreeDTO;
-import com.CSIR.TMD.DTO.SectionTwoDTO;
+import com.CSIR.TMD.DTO.*;
 //import com.CSIR.TMD.Model.SearchRequestDTO;
 //import com.CSIR.TMD.Service.Impl.SearchService;
 import com.CSIR.TMD.Model.CompositeResponse;
@@ -146,5 +143,31 @@ public class TDMPController {
     public CompositeResponse searchSections(@RequestBody SearchRequest searchRequest) {
         return sectionService.searchSections(searchRequest);
     }
+
+    @PostMapping("/saveSectionFourAndFetchAll")
+    public ResponseEntity<AllSectionsDTO> saveSectionFourAndFetchAll(@RequestBody SectionFourDTO sectionFourDTO) {
+        // Save section four
+        SectionFourDTO savedSectionFour = sectionFourService.saveSection(sectionFourDTO);
+
+        String technologyRefNo = savedSectionFour.getTechnologyRefNo();
+
+        // Fetch other sections using the same technologyRefNo
+        SectionOneDTO sectionOne = sectionOneService.getByTechnologyRefNo(technologyRefNo);
+        SectionTwoDTO sectionTwo = sectionTwoService.getByTechnologyRefNo(technologyRefNo);
+        SectionThreeDTO sectionThree = sectionThreeService.getByTechnologyRefNo(technologyRefNo);
+
+        // Create response object
+        AllSectionsDTO allSections = new AllSectionsDTO();
+        allSections.setSectionOne(sectionOne);
+        allSections.setSectionTwo(sectionTwo);
+        allSections.setSectionThree(sectionThree);
+        allSections.setSectionFour(savedSectionFour);
+
+        return new ResponseEntity<>(allSections, HttpStatus.OK);
+    }
+
+
+
+
 
 }

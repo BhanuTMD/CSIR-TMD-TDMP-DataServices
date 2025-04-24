@@ -41,6 +41,13 @@ public class SectionThreeServiceImpl implements SectionThreeService {
                 .toList();
     }
 
+    @Override
+    public SectionThreeDTO getByTechnologyRefNo(String technologyRefNo) {
+        return sectionThreeRepository.findByTechnologyRefNo(technologyRefNo)
+                .map(SectionThreeMapper::toDTO)
+                .orElse(new SectionThreeDTO()); // Return empty DTO
+    }
+
     public void deleteSectionThree(String technologyRefNo) {
         sectionThreeRepository.deleteById(technologyRefNo);
     }
