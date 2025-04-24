@@ -38,5 +38,14 @@ public class SectionTwoServiceImpl implements SectionTwoService {
         SectionTwo savedEmployee =SectionTwoRepository.save(SectionTwo);
         return SectionTwoMapper.toDTO(savedEmployee);
     }
+
+    @Override
+    public SectionTwoDTO getByTechnologyRefNo(String technologyRefNo) {
+        return SectionTwoRepository.findByTechnologyRefNo(technologyRefNo)
+                .map(SectionTwoMapper::toDTO)
+                .orElse(new SectionTwoDTO()); // Return empty DTO
+    }
+
+
 }
 

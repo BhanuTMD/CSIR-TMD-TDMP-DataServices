@@ -40,4 +40,14 @@ public class SectionFourServiceImpl implements SectionFourService {
     public void deleteSectionFour(String technologyRefNo) {
         sectionFourRepository.deleteById(technologyRefNo); // Delete by ID
     }
+
+
+    @Override
+    public SectionFourDTO getByTechnologyRefNo(String technologyRefNo) {
+        return sectionFourRepository.findByTechnologyRefNo(technologyRefNo)
+                .map(SectionFourMapper::toDTO)
+                .orElse(new SectionFourDTO()); // Return empty DTO
+    }
+
+
 }

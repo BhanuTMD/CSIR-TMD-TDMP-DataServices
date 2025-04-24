@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface SectionOneRepository extends JpaRepository<SectionOne, String> , JpaSpecificationExecutor<SectionOne> {
@@ -13,5 +14,7 @@ public interface SectionOneRepository extends JpaRepository<SectionOne, String> 
 
     //get all list of Technology Reference Number
 //    List<String> getAllTechnologyRefNo();
+
+    Optional<SectionOne> findByTechnologyRefNo(String technologyRefNo);
 
 }

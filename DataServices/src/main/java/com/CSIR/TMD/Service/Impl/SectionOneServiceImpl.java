@@ -37,6 +37,13 @@ public class SectionOneServiceImpl implements SectionOneService {
         return SectionOneMapper.toSectionOneDTO(sectionOne);
     }
 
+    @Override
+    public SectionOneDTO getByTechnologyRefNo(String technologyRefNo) {
+        return sectionOneRepository.findByTechnologyRefNo(technologyRefNo)
+                .map(SectionOneMapper::toSectionOneDTO)
+                .orElse(new SectionOneDTO()); // Return empty DTO
+    }
+
 //    public SectionOneDTO saveSection(SectionOneDTO sectionOneDTO) {
 //
 //        SectionOne sectionOne = SectionOneMapper.toSectionOne(sectionOneDTO);
