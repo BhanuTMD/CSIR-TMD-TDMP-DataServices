@@ -2,11 +2,10 @@ spring:
   profiles:
     active: ${ENV:dev}  # Uses 'dev' as default if ENV is not set
   config:
-    location: file:./config/*/
+    location: file:./config/*/application-/etc/profile.yaml
   jackson:
     date-format: dd/MM/yyyy
 
 server:
   port: 8080
   # address: 0.0.0.0
-
